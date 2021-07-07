@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">      
+    <!--<ion-title>top-scorers</ion-title>-->
+      <ion-back-button></ion-back-button>
+      <ion-title>
+        Goleadores
+      </ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="heading">
+    Tabla de goleadores
+  </h2>
+  <p class="sub-heading">
+    En esta lista estan las posiciones de los goleadores.
+  </p>
+
+  <ngx-datatable id="darked" [scrollbarH]="true" class="dark shadow-md darked" [headerHeight]="50" [columnMode]="'force'" [rowHeight]="50" [rows]="scorers" [columns]="columns2" class="material"> 
+    <!--<ngx-datatable-column *ngFor="let column of columns2; let i = index;" name="{{columns2.name}}" prop="{{columns2.prop}}">
+      <ng-template #buttonstemplate let-value="value" let-row="row" *ngIf="column.name==='Actions'" ngx-datatable-cell-template>
+        <span>
+          <h2>ache dos</h2>
+        </span>
+      </ng-template>
+    </ngx-datatable-column>-->
+  </ngx-datatable>
+
+</ion-content>

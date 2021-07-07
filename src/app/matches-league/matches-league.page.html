@@ -1,0 +1,236 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">      
+    <!--  <ion-title>matches-league</ion-title> -->
+    <ion-back-button></ion-back-button>
+    <ion-title>Partidos de la Liga</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+
+  <img src="../../assets/imgs/soccer.png" alt="soccer">
+
+  <h2 class="heading" mode="ios">
+    Live Matches
+  </h2>
+
+  <p *ngIf="this.live_matches.length == 0" class="no-live-matches">
+    <!--There's no matches live right now, check the match list.-->
+    <span class="no-matches">
+      No hay partidos en vivo en estos momentos
+    </span>
+  </p>
+
+  <p *ngIf="this.live_matches.length > 0" class="sub-heading-text">
+    <span class="live-matches">
+    Partidos, en vivo con marcador actualizado
+    </span>
+  </p>
+
+  <div *ngIf="this.live == true">
+  <ion-card mode="ios" *ngFor="let match of live_matches" (click)="goToMatch(match.match_id)"> 
+    <ion-card-header>
+      <span class="green-dot"></span> 
+      <ion-card-subtitle class="live-heading">PARTIDO EN VIVO</ion-card-subtitle>
+      <!--<ion-card-title>Card Title</ion-card-title>-->
+      <ion-grid class="points-grid">
+        <ion-row>
+          <ion-col size="4">
+            <p>
+              Casa
+            </p>
+          </ion-col>
+          <ion-col size="4"></ion-col>
+          <ion-col>
+            <p>
+              Visitante
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img [src]="match.home_team.logo" alt="">
+            <h2>
+              {{ match.home_team.name }}
+            </h2>
+          </ion-col>
+          <ion-col>
+            <h2 class="match-result">
+              {{ match.stats.ft_score }}
+            </h2>
+            <span>
+              Minute: {{ match.minute }}
+            </span>
+          </ion-col>
+          <ion-col>
+            <img [src]="match.away_team.logo" alt="">
+            <h2>
+              {{ match.away_team.name }}
+            </h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <!--Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.-->
+      <p *ngIf="match.venue != null">
+        <ion-icon name="earth-outline"></ion-icon> <!--Estadio: -->{{ match.venue.name }} - {{ match.venue.city }}
+      </p>
+      <br>
+      <p *ngIf="match.match_start != null">
+        <ion-icon name="stopwatch-outline"></ion-icon> <!-- Tiempo: -->{{ match.match_start }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+  <h2 class="heading" mode="ios">
+    Match List - Semana
+  </h2>
+  <p class="sub-heading-text">
+    Partidos de esta jornada y sus listados
+  </p>
+  <p class="sub-heading-text" *ngIf="this.prox_matches.length == 0">
+    <span class="no-matches">
+    No se encontraron proximos partidos esta semana
+    </span>
+  </p>
+  <!--<ion-card mode="ios">
+    <ion-card-header>-->
+      <!--<ion-card-subtitle>PROXIMO PARTIDO</ion-card-subtitle>-->
+      <!--<ion-card-title>Card Title</ion-card-title>-->
+      <!--<ion-grid class="points-grid">
+        <ion-row>
+          <ion-col size="4">
+            <p>
+              Casa
+            </p>
+          </ion-col>
+          <ion-col size="4"></ion-col>
+          <ion-col>
+            <p>
+              Visitante
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h2>
+              Manchester
+            </h2>
+          </ion-col>
+          <ion-col>
+            <h2>
+              -
+            </h2>
+          </ion-col>
+          <ion-col>
+            <h2>
+              Chelsea
+            </h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>-->
+  
+    <!--<ion-card-content>-->
+      <!--Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.-->
+      <!--<p>
+        Estadio: Old Trafford
+      </p>
+    </ion-card-content>
+  </ion-card>-->
+
+    <ion-card mode="ios" *ngFor="let match of prox_matches"> 
+      <ion-card-header>
+        <ion-card-subtitle>PROXIMO PARTIDO</ion-card-subtitle>
+        <!--<ion-card-title>Card Title</ion-card-title>-->
+        <ion-grid class="points-grid">
+          <ion-row>
+            <ion-col size="4">
+              <p>
+                Casa
+              </p>
+            </ion-col>
+            <ion-col size="4"></ion-col>
+            <ion-col>
+              <p>
+                Visitante
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <img [src]="match.home_team.logo" alt="">
+              <h2>
+                {{ match.home_team.name }}
+              </h2>
+            </ion-col>
+            <ion-col>
+              <h2>
+                -
+              </h2>
+            </ion-col>
+            <ion-col>
+              <img [src]="match.away_team.logo" alt="">
+              <h2>
+                {{ match.away_team.name }}
+              </h2>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <!--Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.-->
+        <p *ngIf="match.venue != null">
+          <ion-icon name="earth-outline"></ion-icon> <!--Estadio: -->{{ match.venue.name }} - {{ match.venue.city }}
+        </p>
+        <br>
+        <p *ngIf="match.match_start != null">
+          <ion-icon name="stopwatch-outline"></ion-icon> <!-- Tiempo: -->{{ match.match_start }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <h2 class="heading" mode="ios">
+      Latest Matches History
+    </h2>
+
+    <p class="sub-heading-text">
+      Partidos terminados y su historial
+    </p>
+
+    <ngx-datatable [scrollbarH]="true" *ngIf="this.ended_matches.length > 0" [headerHeight]="50" [footerHeight]="50" [limit]="10" class="dark datatable" [columnMode]="'force'" [rowHeight]="50" [rows]="this.ended_matches" [columns]="columns" class="material"  (activate)="goToStats($event)"> 
+
+    </ngx-datatable>
+
+    <h2 class="heading" mode="ios">
+      Upcoming Matches
+    </h2>
+
+    <p class="sub-heading-text">
+      <!--Proximo p-->Partidos en las proximas jornadas
+    </p>
+
+    <ngx-datatable [scrollbarH]="true" *ngIf="this.upcoming_matches.length > 0" [headerHeight]="50" [footerHeight]="50" [limit]="10" class="dark datatable" [columnMode]="'force'" [rowHeight]="50" [rows]="this.upcoming_matches" [columns]="columns2" class="material">
+    
+    </ngx-datatable>
+    <ng-template #iconsTemplate let-row="row" let-value="value" let-i="index">
+      <section class="name-logo">
+        <img [src]="row.away_logo" alt="">
+        <span>
+          {{ value }}
+        </span>
+      </section>
+    </ng-template>
+
+
+
+</ion-content>

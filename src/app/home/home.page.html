@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--<ion-title>
+      Blank
+    </ion-title>-->
+    <ion-title>
+      <!--Teamz-->
+      <!--<img src="../../assets/imgs/logo-icon.svg" class="icon-top" alt="">-->
+      teamz<span class="dot">.</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <!--<ion-list>
+    <ion-item>
+    <ion-label>
+      Modo oscuro
+    </ion-label>
+    <ion-checkbox id="themeToggle" slot="end"></ion-checkbox>
+    </ion-item>
+  </ion-list>-->
+
+  <section class="cover-top">
+    <h1 class="first--heading">
+      teamz<span class="dot">.</span>
+    </h1>
+  </section>
+
+  <!--<p class="sub-heading class-center">
+    Tus ligas en tu lugar favorito.
+  </p>-->
+
+  <ion-card id="card-first" class="shadow-md">
+  <h2 id="heading--top"><!--Selecciona tu liga. --> <!--Our leagues--> Nuestras Ligas</h2>
+
+  <p class="sub-heading">
+    <!--Por favor, -->selecciona la liga que desees buscar mas informacion.
+  </p>
+
+  <ion-grid>
+    <ion-row class="icons">
+     <!-- <ion-col class="shadow-md" (click)="individual()" [routerLink]="['/individual-league', idPremier]"> -->
+      <!--<ion-col class="shadow-md" (click)="goToPage(idPremier, england)">
+        <img src="../../assets/imgs/premier-league.png" alt="Premier" class="icons-img">
+        <h2 class="sub-heading">Premier League</h2>
+      </ion-col>-->
+      <ion-col class="shadow-md" (click)="goToPage(idPremier, england)">
+        <img src="../../assets/imgs/PL3.jpg" alt="Premier" class="design-img">
+        <h2 class="sub-heading">Premier League</h2>
+      </ion-col>
+      <!--<ion-col class="shadow-md" id="la-liga" [routerLink]="['/individual-league']">-->
+      <!--<ion-col class="shadow-md" (click)="goToPage(idLiga, spain)">
+        <img src="../../assets/imgs/la-liga.png" alt="Premier" class="icons-img">
+        <h2 class="sub-heading">La Liga Santander</h2>
+      </ion-col>-->
+      <ion-col class="leagues-news shadow-md" (click)="goToPage(idLiga, spain)">
+        <img src="../../assets/imgs/BBVA1.jpg" alt="Liga" class="design-img">
+        <h2 class="sub-heading">La Liga Santander</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row class="icons">
+      <ion-col class="shadow-md" [routerLink]="['/individual-league']" (click)="notAvalaible()">
+        <img src="../../assets//imgs/UCL1.jpg" alt="Champions" class="design-img">
+        <h2 class="sub-heading">UEFA Champions League</h2>
+      </ion-col>
+      <ion-col class="shadow-md" [routerLink]="['/individual-league']" (click)="notAvalaible()">
+        <img src="../../assets//imgs/UEL1.jpg" alt="Europa League" class="design-img">
+        <h2 class="sub-heading">UEFA Europa League</h2>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row>
+      <ion-button [routerLink]="['/match-stats']">
+        Go to data
+      </ion-button>
+    </ion-row>-->
+  </ion-grid>
+</ion-card>
+</ion-content>

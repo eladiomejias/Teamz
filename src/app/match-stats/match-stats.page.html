@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <!--<ion-title>match-stats</ion-title>-->
+    <ion-buttons slot="start">      
+      <ion-back-button></ion-back-button>
+    <ion-title>Estadisticas de partido</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container" *ngIf="this.dataReceived == true">
+  <img src="../../assets/imgs/match.jpeg" alt="soccer">
+  <ion-grid>
+   <ion-card mode="ios" class="card-match">
+    <ion-row class="scoreboard">
+      <ion-col class="team-col">
+        <img [src]="data.home_team.logo" alt="data.home_team.name">
+        <h3>Casa</h3>
+      </ion-col>
+      <ion-col class="score">
+        <h3 class="result-text">Resultado</h3>
+        <h2>{{ data.stats.ft_score }}</h2>
+        <h3 class="heading-small" id="date">Fecha {{ data.round.name }}</h3>
+      </ion-col>
+      <ion-col class="team-col">
+        <img [src]="data.away_team.logo" alt="data.away_team.name">
+        <h3>Visitante</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset="2" size="8">
+        <h3 class="heading-small" id="event">Eventos</h3>
+      </ion-col>
+      <ion-col size="12" id="second-col">
+        <ion-item *ngFor="let event of this.data.match_events" lines="none">
+          <span class="wrapper-item">
+          <span class="name-player">{{ event.player_name }}</span>
+          <img [src]="'../../assets/match-event/' + event.type + '.svg'"  alt="" class="vector-img">
+          <span class="name-player">{{ event.related_player_name }}</span>
+          <span class="name-player minute-name">{{event.minute}}'</span>
+          </span>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-grid>
+
+  <ion-grid class="lineups" *ngFor="let lineups of this.data.lineups">
+    <ion-card mode="ios">
+        <h2>Alineaciones</h2>
+      <ion-list>
+        <ion-item class="formation" lines="none" *ngIf="lineups.team_info">
+          <img [src]="lineups.team_info.logo" alt="" class="img-logo-lineups" slot="start">
+          <span slot="start">
+            Equipo - {{ lineups.team_info.name }}
+          </span>
+          <span slot="end">
+            {{ lineups.formation }}
+          </span>
+        </ion-item>
+        <ion-item *ngFor="let player of lineups.players" lines="none" class="team">
+          {{ player.firstname }} {{ player.lastname }}
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid *ngIf="this.data.status != 'finished'">
+    <ion-row>
+      <ion-col size="6" offset="3" class="centering">
+        <ion-button class="act-btn" (click)="update()">
+          Actualizar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

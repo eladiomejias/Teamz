@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">      
+      <ion-back-button></ion-back-button>
+      <ion-title>Individual League</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dark">
+  <!--<ion-list>
+    <ion-item *ngFor="let standing of standings; let i = index;">
+      <p>
+        {{ standing.team_id }} - {{ standingsInfoTeam[i].name }}
+      </p>
+      <img [src]="standingsInfoTeam[i].logo" alt="">
+    </ion-item>
+  </ion-list>-->
+  <!--<h2>Test</h2>-->
+
+  <div class="container container-table">
+
+    <h2 class="table-heading">
+      Tabla de la Liga
+    </h2>
+
+    <p class="sub-heading">
+      Puntuaciones, posiciones y estadisticas.
+    </p>
+
+    <ngx-datatable id="darked" [scrollbarH]="true" class="dark shadow-md darked" [headerHeight]="50" [columnMode]="'force'" [rowHeight]="50" [rows]="standings" [columns]="columns2" class="material"> 
+      <!--<ngx-datatable-column *ngFor="let column of columns2; let i = index;" name="{{columns2.name}}" prop="{{columns2.prop}}">
+        <ng-template #buttonstemplate let-value="value" let-row="row" *ngIf="column.name==='Actions'" ngx-datatable-cell-template>
+          <span>
+            <h2>ache dos</h2>
+          </span>
+        </ng-template>
+      </ngx-datatable-column>-->
+    </ngx-datatable>
+
+    <ng-template #templateName let-row="row" let-value="value" let-i="index">
+      <section class="name-logo">
+        <img [src]="row.team_info.logo" alt="row.team_id">
+        <span>
+          {{ value }}
+        </span>
+      </section>
+      <!--<strong>{{ value }}</strong>-->
+    </ng-template>
+
+    <!-- Buttons -->
+    <section class="btn-list">
+      <ion-button color="primary" (click)="matches()">
+        Partidos
+      </ion-button>
+      <ion-button color="secondary" (click)="scorers()">
+        Goleadores
+      </ion-button>
+    </section>
+
+  </div>
+</ion-content>
