@@ -1,3 +1,6 @@
+
+![Teamz](https://raw.githubusercontent.com/eladiomejias/Teamz/main/src/assets/imgs/banner.jpg)
+
 # Teamz
 
 Aplicación Ionic para distintas ligas de fútbol.
@@ -22,6 +25,8 @@ Actualmente soporta las siguientes ligas:
  - Próximos partidos semanales
  - Próximas jornadas
 
- ### Live test
+ ### Live test / Prueba online
+
+En este sitio podrás probar la aplicación Teamz de manera simple y sencilla.
 
 https://teamz-pro.netlify.app
