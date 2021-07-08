@@ -1,0 +1,201 @@
+.container{
+    margin: 20px;
+}
+
+.scoreboard{
+    margin-top: 40px;
+}
+
+.scoreboard ion-col{
+    text-align: center;
+}
+
+.score h2{
+    font-size: 3em;
+    font-size: 2.5em;
+    margin-top: 7px;
+    letter-spacing: 7px;
+    color: black;
+}
+
+.team-col img{
+    width: 70px;
+}
+
+.team-col h3, .heading-small{
+    font-size: 12px;
+    color: gray;   
+    text-align: center;
+}
+
+.result-text, .formation{
+    font-size: 12px !important;
+    color: gray;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.formation{
+    color: rgb(85, 84, 84);
+    font-size: 12px !important;
+    font-weight: 500;
+}
+
+.team, .name-player{
+    font-size: 13px;
+    color: gray;   
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+// lineups
+.lineups{
+    margin-top: 5px;
+}
+
+.lineups h2{
+    font-size: 12px;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    color: gray;   
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.lineups ion-card{
+    margin-top: 0px;
+}
+
+.img-logo-lineups{
+    width: 50px;
+    margin-right: 7px;
+}
+
+.vector-img{
+    width: 47px;
+    padding: 0px 10px;
+    //////
+    width: 27px;
+    padding: 0px 3px;
+    vertical-align: middle;
+}
+
+.name-player{
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.minute-name{
+    font-weight: 500;
+}
+
+.wrapper-item{
+    margin: 0 auto;
+}
+
+.act-btn{
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.centering{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.heading-small, h3{
+    text-transform: uppercase;
+}
+
+#event, #date {
+    background: #ddd;
+    color: #222;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.wrapper-item{
+    background: #ddd;
+    color: #222;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+    background: #eaeaea;
+    color: #222;
+}
+
+ion-content{
+    background: #eaeaea !important;
+}
+
+/*
+.wrapper-item .name-player{
+    color: white;
+
+    color: white;
+    font-weight: 500;
+}*/
+
+.wrapper-item .name-player{
+    color: #222;
+
+    color: #222;
+    font-weight: 500;
+}
+
+#second-col{
+    margin-bottom: 10px;
+}
+
+ion-content{
+    background: #eaeaea !important;
+}
+
+.card-match{
+    margin-top: -70px;
+    position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+    h2{
+        color: white !important;
+    }
+
+    #event, #date{
+        background: #353535;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+
+    .wrapper-item{
+        background: #f2f2f2;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 3px;
+    
+        background: #292929;
+        color: #f2f2f2;
+    }
+
+    .wrapper-item .name-player{
+        color: white;
+    
+        color: white;
+        font-weight: 500;
+    }
+
+    ion-content{
+        background: black !important;
+    }
+
+    ion-back-button{
+        color: white !important;
+    }
+}
+

@@ -1,0 +1,141 @@
+.points-grid{
+    text-align: center;
+}
+
+.points-grid h2{
+    font-size: 16px;
+    color: black;
+}
+
+body .dark .points-grid h2{
+    color: white !important;
+}
+
+.points-grid p{
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;;
+}
+
+.heading{
+    font-weight: 500;
+    padding: 20px;
+    font-size: 2em;
+}
+
+.points-grid ion-col{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.points-grid ion-card-content p{
+    font-size: 13px;
+    margin-top: 2px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+ion-icon{
+    font-weight: bold;
+    vertical-align: middle;
+    font-size: 22px;
+    //color: black;
+    padding-right: 7px;
+}
+
+.points-grid img{
+    width: 50px;
+}
+
+.no-live-matches{
+    font-size: 16px;
+    color: gray;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.sub-heading-text{
+    font-size: 16px;
+    color: gray;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.datatable{
+    //padding: 20px;
+}
+
+.ngx-datatable.material{
+    margin: 20px;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+.ngx-datatable.fixed-row{
+    text-align: center;
+}
+
+.match-result{
+    font-size: 2em !important;
+    letter-spacing: 2px;
+}
+
+.green-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(0, 237, 0);
+    padding-left: 20px;
+}
+
+.live-heading{
+    margin-top: 10px;
+}
+
+.vector-img{
+    vertical-align: middle !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .points-grid h2{
+        color: white;
+    }
+
+    .ion-icon{
+        -color: white;
+    }
+}
+
+.no-matches{
+    background: #f27f7f;
+    color: #7c2626;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.heading{
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 0px;
+    text-transform: uppercase;
+}
+.sub-heading-text, .no-matches{
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+.live-matches{
+    background: #ade9cf;
+    color: #3ea076;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
