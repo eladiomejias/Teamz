@@ -38,7 +38,7 @@ export class IndividualLeaguePage implements OnInit {
       console.log(this.countryId);
       */
       // Getting the data on the service
-      this.dataService.getSeasonsById(this.id).subscribe(response => {
+      this.dataService.getSeasonsById(this.id).subscribe((response: any[]) => {
 
         for (var index = 0; index < response.length; ++index) {
 
