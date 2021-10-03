@@ -39,10 +39,19 @@ export class IndividualLeaguePage implements OnInit {
       */
       // Getting the data on the service
       this.dataService.getSeasonsById(this.id).subscribe(response => {
+
+        for (var index = 0; index < response.length; ++index) {
+
+          var seasonId = response[index];
+         
+          if(seasonId.is_current == 1){
+            this.responseData = response["data"][index];
+            this.league = this.responseData.league;
+            this.season = this.responseData.season_id;
+            break;
+          }
+         }
         //console.log(response);
-        this.responseData = response["data"][0];
-        this.league = this.responseData.league;
-        this.season = this.responseData.season_id;
 
         this.getTeams();
         this.addItemsTable();
