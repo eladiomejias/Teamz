@@ -38,23 +38,26 @@ export class IndividualLeaguePage implements OnInit {
       console.log(this.countryId);
       */
       // Getting the data on the service
-      this.dataService.getSeasonsById(this.id).subscribe((response: any[]) => {
+      this.dataService.getSeasonsById(this.id).subscribe((response) => {
 
-        for (var index = 0; index < response.length; ++index) {
+        console.log(response);
 
-          var seasonId = response[index];
-         
-          if(seasonId.is_current == 1){
-            this.responseData = response["data"][index];
-            this.league = this.responseData.league;
-            this.season = this.responseData.season_id;
-            break;
-          }
-         }
-        //console.log(response);
+       var response2 = response["data"].find(item => item.is_current === 1)
 
+        console.log(response2);
+
+        //this.responseData = response["data"][index];
+        this.responseData = response2;
+        this.league = this.responseData.league_id;
+        this.season = this.responseData.season_id;
+
+        console.log(this.league + "" + this.season)
         this.getTeams();
         this.addItemsTable();
+      
+
+        //console.log(response);
+
         
         //this.getMatches();
       });
@@ -111,6 +114,7 @@ export class IndividualLeaguePage implements OnInit {
   getStandings(){
     this.dataService.getLeagueStanding(this.season).subscribe(response => {
       const myData = response;
+      // console.log(response);
       this.standings = response["data"]["standings"];
       //console.log("Standings: ");
       //console.log(this.standings);
@@ -118,6 +122,7 @@ export class IndividualLeaguePage implements OnInit {
         return a.points - b.points || a["overall"].goals_diff - b["overall"].goals_diff;
       });
       this.standings = this.standings.reverse();
+      console.log(this.standings);
       this.getTeamsOnStandings();
     })
   }

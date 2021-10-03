@@ -39,7 +39,9 @@ export class MatchesLeaguePage implements OnInit {
       this.countryId = parseInt(params['countryid']);
       console.log(this.id);
       this.dataService.getSeasonsById(this.id).subscribe(response => {
-        this.season = response["data"][0].season_id;
+        //this.season = response["data"][0].season_id;
+        var responseFilter = response["data"].find(item => item.is_current === 1)
+        this.season = responseFilter.season_id;
         //console.log(this.season);
         this.getMatches();
       })
